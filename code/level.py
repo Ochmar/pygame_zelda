@@ -17,6 +17,7 @@ class Level:
 
     def run(self):
         self.visible_sprites.draw(self.display_surface)
+        self.visible_sprites.update()
 
     def create_map(self):
         for row_index, row in enumerate(WORLD_MAP):
@@ -26,4 +27,4 @@ class Level:
                 if col == 'x':
                     Tile(pos=(x, y), groups=[self.visible_sprites, self.obstacle_sprites])
                 if col == 'p':
-                    Player(pos=(x, y), groups=[self.visible_sprites])
+                    self.player = Player(pos=(x, y), groups=[self.visible_sprites])
