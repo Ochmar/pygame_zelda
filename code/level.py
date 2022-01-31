@@ -27,4 +27,8 @@ class Level:
                 if col == 'x':
                     Tile(pos=(x, y), groups=[self.visible_sprites, self.obstacle_sprites])
                 if col == 'p':
-                    self.player = Player(pos=(x, y), groups=[self.visible_sprites])
+                    self.player = Player(
+                        pos=(x, y),
+                        groups=[self.visible_sprites],
+                        obstacle_sprites=self.obstacle_sprites
+                    )
